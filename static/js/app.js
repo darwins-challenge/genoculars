@@ -22,6 +22,11 @@
         el.show().text(el.text() + '\n' + e);
     }
 
+    function updateView(frame) {
+        copyTraceFrameToModel(frame, model.lander);
+        view.update();
+    }
+
     function copyTraceFrameToModel(frame, lander) {
         lander.x = frame.x;
         // Some scaling on the coordinates so there's more usable space on
@@ -76,12 +81,11 @@
 
         function tick(){
             if (frame < currentTrace.length) {
-                copyTraceFrameToModel(currentTrace[frame], model.lander);
+                updateView(currentTrace[frame]);
             }
             if (currentTrace.length + animator.frames(WAIT_TIME_S) < frame) {
                 frame = 0;
             }
-            view.update();
             frame++;
             timer = animator.schedule(tick);
         };
