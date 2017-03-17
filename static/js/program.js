@@ -58,7 +58,7 @@ var htmlifyProgram = (function() {
         return ret.join('\n');
     }
 
-    var dispatch = {
+    var moonlanderDispatch = {
         Constant: mkConst(),
         Sensor: mkConst(),
         Command: mkConst(),
@@ -79,7 +79,7 @@ var htmlifyProgram = (function() {
         Not: mkUnOp('&not;'),
 
         True: mkLit('true'),
-        False: mkLit('false'),
+        False: mkLit('false')
     };
 
     function render(program) {
@@ -87,7 +87,8 @@ var htmlifyProgram = (function() {
             return "WUT UNDEFINED";
         if ($.isArray(program))
             return renderList(program);
-        return (dispatch[program.variant] || renderUnknown)(program);
+        return (render.dispatch[program.variant] || renderUnknown)(program);
     }
+    render.dispatch = moonlanderDispatch;
     return render;
 }());
