@@ -1,0 +1,31 @@
+{
+    "name": "genoculars",
+    "homepage": "https://github.com/darwins-challenge/genoculars",
+    "authors": [
+        "dvberkel <daan.v.berkel.1980@gmail.com>",
+        "rix0rrr <rix0rrr@gmail.com>"
+    ],
+    "description": "Canvas based genetic traces visualisation",
+    "main": [
+        "static/index.html",
+        "static/styles.css",
+        "static/js/lander.js "
+    ],
+    "keywords": [
+        "genetic",
+        "traces"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "static/bower_components",
+        "src",
+        "traces",
+        "target",
+        "Cargo.*"
+    ],
+    "dependencies": {
+        "bootstrap": "^3.3.6"
+    }
+}

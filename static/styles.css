@@ -1,0 +1,42 @@
+#score-table td:nth-child(2) {
+  text-align: right;
+}
+
+.left-pane {
+   max-height: 500px;
+   overflow-y: scroll;
+}
+
+.list-group > a > span:first-child {
+    padding-left: 1ex
+}
+
+.list-group > .unsuccessful::before {
+    content: "✘"
+}
+
+.list-group > .successful::before {
+    content: "✔"
+}
+
+.list-group > .folder::before {
+    /* content: "&#x1f4c2;" */
+    content: url("data:text/html,&#x1f4c1;")
+}
+
+.list-group > .file::before {
+}
+
+.list-group .glyphicon {
+    margin-left: -10px;
+    margin-right: 1em;
+}
+
+.list-group .successful {
+    color: #5cb85c;
+}
+
+#errors {
+  max-height: 5em;
+  overflow: auto;
+}
